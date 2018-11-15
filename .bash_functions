@@ -1,4 +1,4 @@
-### NVM apply
+# NVM apply
 enter_directory(){
     if [ "$PWD" != "$PREV_PWD" ]; then
         PREV_PWD="$PWD";
@@ -6,5 +6,10 @@ enter_directory(){
             nvm use;
         fi
     fi
+}
+
+# docker
+dl() {
+  docker logs -f "$1"
 }
 
