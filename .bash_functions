@@ -10,6 +10,9 @@ enter_directory(){
 
 # docker
 dl() {
-  docker logs -f "$1"
+  docker logs -f $(docker ps -a | grep $1 | awk '{print $1}')
 }
 
+drs() {
+    docker restart $(docker ps -a | grep $1 | awk '{print $1}')
+}
